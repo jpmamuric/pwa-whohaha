@@ -1,0 +1,74 @@
+.about {
+  &__section {
+    margin-top: 0;
+    padding: 9rem 0;
+    background: #b84fc5;
+    background-image: url("../img/badass-women.png");
+    background-repeat: no-repeat;
+    background-position: left 93%;
+    background-size: 65%;
+    width: 100%;
+    margin-bottom: 0;
+  }
+
+  &__h1 {
+    font-family: "Lato";
+    font-weight: 900;
+    margin: 3rem 0;
+    font-size: 4.5rem;
+    padding: 0;
+    line-height: 1.22;
+    color: #46c8f7;
+  }
+
+  &__p,
+  &__h2 {
+    color: #fff;
+    font-weight: 300;
+  }
+
+  &__p {
+    width: 100%;
+    margin: 3rem auto 0;
+    text-align: left;
+    padding-left: 1rem;
+    position: relative;
+
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 1rem;
+      height: 1.15rem;
+      background-image: url("../img/squiggly-vertical.png");
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+
+  }
+
+  &__h2 {
+    font-family: "Lato", serif;
+    font-size: 1.8em;
+    line-height: 1.4;
+    max-width: 90%;
+    margin: 0 auto;
+    margin-bottom: 4rem;
+    text-align: center;
+    text-transform: none;
+
+    @include responsive(phone){
+      font-size: 1.2em;
+    }
+  }
+
+  &__img {
+    width: 17rem;
+    position: relative;
+    top: 3px;
+    padding-right: 5px;
+    vertical-align: baseline;
+  }
+}

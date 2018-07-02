@@ -1,0 +1,37 @@
+section {
+  padding: 8rem 0;
+}
+
+header.top-header,
+header.section-header {
+	text-transform: uppercase;
+	background-image: -moz-linear-gradient(28deg, #f905a4 0%, #48ceff 77%, #62a3b7 100%);
+	background-image: -webkit-linear-gradient(28deg, #f905a4 0%, #48ceff 77%, #62a3b7 100%);
+	background-image: -ms-linear-gradient(28deg, #f905a4 0%, #48ceff 77%, #62a3b7 100%);
+	text-align: center;
+	height: 2px;
+	margin-bottom: 40px;
+}
+
+header.top-header h2,
+header.top-header span,
+header.section-header h2,
+header.section-header span {
+	padding: 0 7px;
+	background-color: #ffffff;
+	position: relative;
+	white-space: nowrap;
+	display: inline-block;
+	top: -14px;
+	font-size: 22px;
+	margin: 0;
+	font-family: "Lato", Helvetica, Arial;
+	font-weight: 300;
+	line-height: 1.4;
+	text-transform: uppercase;
+}
+
+.lead {
+	font-size: 1.6rem;
+	line-height: 1.56;
+}

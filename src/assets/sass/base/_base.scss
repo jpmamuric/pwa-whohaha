@@ -1,0 +1,92 @@
+:root {
+
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; // 1rem = 10px;
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  width: 100%;
+}
+
+body{
+    @include background-image-3( 28deg, rgb(249,5,164) 0%, rgb(72,206,255) 77%, rgb(98,163,183) 100%);
+    font-family: $body-font;
+    font-weight: 300;
+    font-size: 16px;
+    background: $white;
+}
+
+#page > #content{
+	background: $background;
+	overflow: hidden;
+	padding-top: 64px;
+}
+
+#main.container,
+#primary.container{
+	padding-top: 40px;
+}
+
+#primary.content-area{
+	margin: auto;
+}
+
+iframe,
+img{
+	max-width: 100%;
+}
+img{
+	height: auto;
+}
+
+.padd-both {
+    padding: 30px 0;
+}
+
+// Social Media Icons http://www.socicon.com/chart.php
+span.socicon,
+a.socicon{
+	font-family: $social-font;
+}
+
+.entry-tags{
+	display: none;
+}
+
+hr{
+  @include background-image-3(28deg,#f905a4 0,#48ceff 77%,#62a3b7 100%);
+  text-align: center;
+  height: 2px;
+  margin: 40px 0;
+}
+
+span.popular-post{
+  position: absolute;
+  right: 8px;
+  top: 8px;
+  color: #fff;
+  font-size: 26px;
+  background: #e4128d;
+  border-radius: 50%;
+  padding: 7px;
+}
+
+#homeposts,
+#archiveposts{
+	padding-bottom: 30px;
+}

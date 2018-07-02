@@ -1,0 +1,102 @@
+// MEDIA QUERY MANAGER
+/*
+
+  0    - 600px  Phone
+  600  - 900px  Tablet Portrait
+  900  - 1200px Tablet Landscape
+  1200 - 1800px Desktop (normal desktop first approach)
+  1800 + Big Desktop
+
+
+$breakpoint argument choices:
+ phone
+ tablet-portrait
+ tablet-landscape
+ desktop
+
+ em = best choice for media queries
+ 1em = 16px
+*/
+
+@mixin responsive($breakpoint) {
+  @if $breakpoint == phone {
+    // 600px / 16px (default font size) = 37.5em
+    @media only screen and (max-width: 37.5em ) { @content };
+  }
+
+  @if $breakpoint == tablet-portrait {
+    @media  only screen and (max-width: 56.25em) { @content };
+  }
+
+  @if $breakpoint == tablet-landscape {
+    @media  only screen and (max-width: 75em) { @content };
+  }
+
+  @if $breakpoint == desktop {
+    @media  only screen and (min-width: 112.5em) { @content };
+  }
+}
+
+@mixin linx ($link, $visit, $hover, $active) {
+  a {
+    color: $link;
+    &:visited {
+      color: $visit;
+    }
+    &:hover {
+      color: $hover;
+    }
+    &:active {
+      color: $active;
+    }
+  }
+}
+
+@mixin background-image-3 ($deg, $color1, $color2, $color3) {
+  background-image: -moz-linear-gradient( $deg, $color1, $color2, $color3);
+  background-image: -webkit-linear-gradient( $deg, $color1, $color2, $color3);
+  background-image: -ms-linear-gradient( $deg, $color1, $color2, $color3);
+}
+
+@mixin background-image-to-gradient ($imageurl, $start, $middle, $end) {
+  background: -moz-linear-gradient(top, $start, $middle, $end), url($imageurl);
+  // background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0, 0, 0, 0)), color-stop(59%, rgba(0, 0, 0, 0)), color-stop(100%, rgba(0, 0, 0, 0.65))), url($imageurl);
+  background: -webkit-linear-gradient(top, $start, $middle, $end), url($imageurl);
+  background: -o-linear-gradient(top, $start, $middle, $end), url($imageurl);
+  background: -ms-linear-gradient(top, $start, $middle, $end), url($imageurl);
+  background: linear-gradient(to bottom, $start, $middle, $end), url($imageurl);
+}
+
+@mixin transform-animation ($name, $duration, $iteration, $timing){
+  -webkit-animation-name: $name;
+  -webkit-animation-duration: $duration;
+  -webkit-animation-iteration-count: $iteration;
+  -webkit-animation-timing-function: $timing;
+  -moz-animation-name: $name;
+  -moz-animation-duration: $duration;
+  -moz-animation-iteration-count: $iteration;
+  -moz-animation-timing-function: $timing;
+  -ms-animation-name: $name;
+  -ms-animation-duration: $duration;
+  -ms-animation-iteration-count: $iteration;
+  -ms-animation-timing-function: $timing;
+  animation-name: $name;
+  animation-duration: $duration;
+  animation-iteration-count: $iteration;
+  animation-timing-function: $timing;
+}
+@mixin transform-keyframes($animationName) {
+    @-ms-keyframes #{$animationName} {
+        @content;
+    }
+    @-moz-keyframes #{$animationName} {
+        @content;
+    }
+    @-webkit-keyframes #{$animationName} {
+        @content;
+    }
+    @keyframes #{$animationName} {
+        @content;
+    }
+
+}
